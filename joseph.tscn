@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dvtft3co7jdll"]
+
+[ext_resource type="Script" uid="uid://csnk5ohn18hxv" path="res://character_body_2d.gd" id="1_rplbs"]
+[ext_resource type="Texture2D" uid="uid://bpqgn32rqhjc0" path="res://joseph sprite improved stand wip-Sheet-export.png" id="2_vg5gw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h45lq"]
+atlas = ExtResource("2_vg5gw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s63sg"]
+atlas = ExtResource("2_vg5gw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g16x2"]
+atlas = ExtResource("2_vg5gw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r80s8"]
+atlas = ExtResource("2_vg5gw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3cijr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h45lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s63sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g16x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r80s8")
+}],
+"loop": true,
+"name": &"down",
+"speed": 6.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=2134546554]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=868654755]
+script = ExtResource("1_rplbs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=783722216]
+texture_filter = 1
+position = Vector2(1, 2)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3cijr")
+animation = &"down"
+frame_progress = 0.9838703
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1508253479]
