@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csnk5ohn18hxv" path="res://character_body_2d.gd" id="1_rplbs"]
 [ext_resource type="Texture2D" uid="uid://bpqgn32rqhjc0" path="res://joseph sprite improved stand wip-Sheet-export.png" id="2_vg5gw"]
+[ext_resource type="Texture2D" uid="uid://cek80rlh2qcn3" path="res://joseph back sprite improved stand wip-Sheet-export.png" id="3_h45lq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h45lq"]
 atlas = ExtResource("2_vg5gw")
@@ -17,6 +18,22 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r80s8"]
 atlas = ExtResource("2_vg5gw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cijr"]
+atlas = ExtResource("3_h45lq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an5qv"]
+atlas = ExtResource("3_h45lq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50fgl"]
+atlas = ExtResource("3_h45lq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh2f3"]
+atlas = ExtResource("3_h45lq")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3cijr"]
@@ -37,6 +54,23 @@ animations = [{
 "loop": true,
 "name": &"down",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cijr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an5qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50fgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh2f3")
+}],
+"loop": true,
+"name": &"up",
+"speed": 6.0
 }]
 
 [node name="Node2D" type="Node2D" unique_id=2134546554]
@@ -50,6 +84,6 @@ position = Vector2(1, 2)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3cijr")
 animation = &"down"
-frame_progress = 0.9838703
+frame_progress = 0.23830518
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1508253479]
