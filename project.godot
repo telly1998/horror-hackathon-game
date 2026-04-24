@@ -11,9 +11,22 @@ config_version=5
 [application]
 
 config/name="untitled horror project"
-run/main_scene="uid://dvtft3co7jdll"
+run/main_scene="uid://be110025e5qbn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Gamemanager="*uid://d3i7rhdshae5k"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[global_group]
+
+player="Player chara"
 
 [input]
 

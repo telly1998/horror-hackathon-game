@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvtft3co7jdll"]
 
 [ext_resource type="Script" uid="uid://csnk5ohn18hxv" path="res://character_body_2d.gd" id="1_rplbs"]
+[ext_resource type="Script" uid="uid://batxfb2q874v0" path="res://camera2d.gd" id="2_r80s8"]
 [ext_resource type="Texture2D" uid="uid://bpqgn32rqhjc0" path="res://joseph sprite improved stand wip-Sheet-export.png" id="2_vg5gw"]
 [ext_resource type="Texture2D" uid="uid://cek80rlh2qcn3" path="res://joseph back sprite improved stand wip-Sheet-export.png" id="3_h45lq"]
 [ext_resource type="Texture2D" uid="uid://0j2wjax5q5bv" path="res://joseph side sprite sheet left.png" id="3_s63sg"]
@@ -141,16 +142,35 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=2134546554]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g16x2"]
+radius = 14.0
+height = 50.0
+
+[node name="joseph" type="Node2D" unique_id=2134546554]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=868654755]
+collision_mask = 7
 script = ExtResource("1_rplbs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=783722216]
 texture_filter = 1
-position = Vector2(0, 2)
+position = Vector2(-1, 3)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3cijr")
-animation = &"right"
+animation = &"down"
+frame_progress = 0.6204176
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/AnimatedSprite2D" unique_id=1091981604]
+offset = Vector2(-0.075, 0)
+ignore_rotation = false
+limit_enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_enabled = true
+script = ExtResource("2_r80s8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1508253479]
+position = Vector2(-1, 3)
+shape = SubResource("CapsuleShape2D_g16x2")

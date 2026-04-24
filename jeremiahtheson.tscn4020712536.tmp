@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dniwcfe7d3kru"]
+
+[ext_resource type="Script" uid="uid://bol0ssajjpgmm" path="res://jeremiahcharabody2d.gd" id="1_xitet"]
+[ext_resource type="Texture2D" uid="uid://uy0vvsdctkxd" path="res://jeremiah back sprite-Sheet-export.png" id="2_debmw"]
+[ext_resource type="Texture2D" uid="uid://dbjmxy8gexvto" path="res://jeremiah front walk sheetrt.png" id="3_xitet"]
+[ext_resource type="Texture2D" uid="uid://f2lonjrsp4yh" path="res://jeremiah back sprite1.png" id="4_debmw"]
+[ext_resource type="Script" uid="uid://uvtj42c2raj" path="res://area_2d.gd" id="5_xitet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnxes"]
+atlas = ExtResource("2_debmw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cofa"]
+atlas = ExtResource("2_debmw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2txp"]
+atlas = ExtResource("2_debmw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liktp"]
+atlas = ExtResource("2_debmw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lt5w"]
+atlas = ExtResource("3_xitet")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1ekw"]
+atlas = ExtResource("3_xitet")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj05n"]
+atlas = ExtResource("3_xitet")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6enff"]
+atlas = ExtResource("3_xitet")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xitet"]
+atlas = ExtResource("4_debmw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hutep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnxes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cofa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2txp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liktp")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lt5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1ekw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj05n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6enff")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xitet")
+}],
+"loop": true,
+"name": &"stand_stare",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xitet"]
+radius = 7.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_debmw"]
+radius = 27.522936
+height = 95.41284
+
+[node name="Jeremiah" type="Node2D" unique_id=1739005023]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=286822401]
+process_physics_priority = 1
+scale = Vector2(1.8, 1.8)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_xitet")
+detection_range = 550.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=528556666]
+sprite_frames = SubResource("SpriteFrames_hutep")
+animation = &"front"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1342478797]
+shape = SubResource("CapsuleShape2D_xitet")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=545930458]
+scale = Vector2(0.545, 0.545)
+script = ExtResource("5_xitet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1510401491]
+shape = SubResource("CapsuleShape2D_debmw")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

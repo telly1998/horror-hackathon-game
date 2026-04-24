@@ -3,13 +3,12 @@ extends CharacterBody2D
 @export var speed: float = 400.0
 @onready var anim = $AnimatedSprite2D
 
-func get_input():
+func _physics_process(_delta: float) -> void:
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
-
-func _physics_process(_delta):
-	get_input()
 	move_and_slide()
+	
+	# Add the animation logic back here
 	update_animation()
 
 func update_animation():
