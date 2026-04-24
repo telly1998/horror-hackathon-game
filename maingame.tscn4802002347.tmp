@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://be110025e5qbn"]
+
+[ext_resource type="PackedScene" uid="uid://8y1fcjfp14aa" path="res://housemain.tscn" id="1_ymkym"]
+[ext_resource type="PackedScene" uid="uid://dvtft3co7jdll" path="res://joseph.tscn" id="2_xu13d"]
+[ext_resource type="PackedScene" uid="uid://dniwcfe7d3kru" path="res://jeremiahtheson.tscn" id="3_xu13d"]
+
+[node name="main" type="Node2D" unique_id=1160967304]
+position = Vector2(0, 2)
+
+[node name="HouseMain" parent="." unique_id=746089384 instance=ExtResource("1_ymkym")]
+position = Vector2(0, 1)
+
+[node name="joseph" parent="." unique_id=2134546554 groups=["player"] instance=ExtResource("2_xu13d")]
+unique_name_in_owner = true
+position = Vector2(550, 400)
+
+[node name="Camera2D" type="Camera2D" parent="joseph" unique_id=1656196414]
+
+[node name="Jeremiah" parent="." unique_id=1739005023 instance=ExtResource("3_xu13d")]
+position = Vector2(994, 148)

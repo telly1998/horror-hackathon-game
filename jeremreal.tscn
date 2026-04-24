@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b0bu5h1r3fikd"]
+
+[ext_resource type="Script" uid="uid://bnp0djbdb7c3x" path="res://jeremscript.gd" id="1_bfy42"]
+[ext_resource type="Texture2D" uid="uid://f2lonjrsp4yh" path="res://jeremiah back sprite1.png" id="2_mofs1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1f2q"]
+atlas = ExtResource("2_mofs1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3xx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1f2q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mofs1"]
+radius = 9.0
+
+[node name="jeremreal" type="CharacterBody2D" unique_id=1565408030]
+script = ExtResource("1_bfy42")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=132835529]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2106380339]
+sprite_frames = SubResource("SpriteFrames_v3xx7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1878986514]
+shape = SubResource("CapsuleShape2D_mofs1")

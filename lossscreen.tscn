@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://nyrvflyd68lf"]
+
+[ext_resource type="Texture2D" uid="uid://cb465yuoqdkp6" path="res://losscrop.tres" id="1_gcv54"]
+[ext_resource type="Script" uid="uid://vyamljep1guo" path="res://lossscreen.gd" id="1_r111s"]
+
+[node name="lossscreen" type="Control" unique_id=389076297]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r111s")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2049244956]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 218.0
+offset_right = 2250.0
+offset_bottom = 2010.0
+texture = ExtResource("1_gcv54")
+stretch_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1383791977]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Button" to="." method="_on_return_button_pressed"]

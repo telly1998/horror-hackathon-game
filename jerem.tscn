@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dbgndwnqrjtto"]
+
+[ext_resource type="Script" uid="uid://bnp0djbdb7c3x" path="res://jeremscript.gd" id="1_36his"]
+[ext_resource type="Script" uid="uid://bs3n1ww2r6x5m" path="res://sprite_2d.gd" id="2_36his"]
+[ext_resource type="Texture2D" uid="uid://f2lonjrsp4yh" path="res://jeremiah back sprite1.png" id="2_eesmt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q80nj"]
+atlas = ExtResource("2_eesmt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36his"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q80nj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eesmt"]
+height = 40.0
+
+[node name="jeremiah" type="CharacterBody2D" unique_id=2057733832]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_36his")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1246598611]
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_36his")
+animation = &"idle"
+script = ExtResource("2_36his")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1649368589]
+shape = SubResource("CapsuleShape2D_eesmt")

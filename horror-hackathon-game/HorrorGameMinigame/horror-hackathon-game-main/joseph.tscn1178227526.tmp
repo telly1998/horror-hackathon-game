@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dvtft3co7jdll"]
+
+[ext_resource type="Script" uid="uid://csnk5ohn18hxv" path="res://character_body_2d.gd" id="1_rplbs"]
+
+[node name="Node2D" type="Node2D" unique_id=2134546554]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2103130772]
+script = ExtResource("1_rplbs")
+speed = null
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1382798266]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1203089510]

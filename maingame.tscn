@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://be110025e5qbn"]
+
+[ext_resource type="PackedScene" uid="uid://8y1fcjfp14aa" path="res://housemain.tscn" id="1_ymkym"]
+[ext_resource type="PackedScene" uid="uid://b0jk1dbg38j7m" path="res://lightbox.tscn" id="2_u3icf"]
+[ext_resource type="PackedScene" uid="uid://dvtft3co7jdll" path="res://joseph.tscn" id="2_xu13d"]
+[ext_resource type="PackedScene" uid="uid://b0bu5h1r3fikd" path="res://jeremreal.tscn" id="4_u3icf"]
+
+[node name="main" type="Node2D" unique_id=1160967304]
+position = Vector2(-1, 1)
+
+[node name="HouseMain" parent="." unique_id=746089384 instance=ExtResource("1_ymkym")]
+position = Vector2(85, 204)
+
+[node name="jeremreal" parent="." unique_id=1565408030 instance=ExtResource("4_u3icf")]
+position = Vector2(1273, 354)
+scale = Vector2(1.5, 1.5)
+
+[node name="joseph" parent="." unique_id=2134546554 groups=["player"] instance=ExtResource("2_xu13d")]
+unique_name_in_owner = true
+position = Vector2(729, 455)
+
+[node name="Area2D2" parent="." unique_id=516753568 instance=ExtResource("2_u3icf")]
+position = Vector2(0, 23)
+scale = Vector2(0.5, 0.5)
+
+[node name="Area2D3" parent="." unique_id=305832527 instance=ExtResource("2_u3icf")]
+position = Vector2(921, 274)
+scale = Vector2(0.5, 0.5)
+
+[node name="Area2D4" parent="." unique_id=1625283425 instance=ExtResource("2_u3icf")]
+position = Vector2(-185, 274)
+scale = Vector2(0.5, 0.5)
+
+[node name="Area2D" parent="." unique_id=1857132900 instance=ExtResource("2_u3icf")]
+position = Vector2(556, 23)
+scale = Vector2(0.5, 0.5)

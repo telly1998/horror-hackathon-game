@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b0jk1dbg38j7m"]
+
+[ext_resource type="Script" uid="uid://etinh2faxft3" path="res://lightbox.gd" id="1_mbl8l"]
+[ext_resource type="Texture2D" uid="uid://h7y6ubhpkbes" path="res://UntitledArtworkUpdated.PNG" id="2_rjxd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbl8l"]
+size = Vector2(48, 117)
+
+[node name="Static" type="StaticBody2D" unique_id=1872642987]
+collision_layer = 7
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=356473232]
+position = Vector2(530, 157)
+rotation = -3.1415925
+scale = Vector2(0.5, -0.574)
+texture = ExtResource("2_rjxd7")
+hframes = 8
+vframes = 8
+frame = 22
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1476559669]
+script = ExtResource("1_mbl8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=538327128]
+position = Vector2(537, 159.5)
+shape = SubResource("RectangleShape2D_mbl8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=669508905]
+position = Vector2(537, 159.5)
+shape = SubResource("RectangleShape2D_mbl8l")

@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://kqnsnj3j267h"]
+
+[ext_resource type="Script" uid="uid://bsgihqx8svy32" path="res://bulbminigame.gd" id="1_t3lyd"]
+[ext_resource type="Script" uid="uid://hcthqcnol80o" path="res://lever_1.gd" id="2_20xm0"]
+[ext_resource type="Script" uid="uid://cmpwr3fvbng05" path="res://lever_2.gd" id="3_1rq7q"]
+[ext_resource type="Script" uid="uid://bswgbcx2f7tcm" path="res://lever_3.gd" id="4_65mjg"]
+[ext_resource type="Script" uid="uid://jxnyapvbm5lt" path="res://lever_4.gd" id="5_65mjg"]
+[ext_resource type="Script" uid="uid://chhgx13l5aywx" path="res://lever_5.gd" id="6_qt6kk"]
+[ext_resource type="Texture2D" uid="uid://cf8k7sq6coscf" path="res://UntitledArtwork1.PNG" id="7_qt6kk"]
+[ext_resource type="Script" uid="uid://chyt5fiyntwmu" path="res://bulbreal.gd" id="8_qt6kk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qt6kk"]
+radius = 0.39999986
+height = 2.7038841
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_65mjg"]
+load_path = "res://.godot/imported/UntitledArtwork1.PNG-a6d5f7f4ccd0664aa1c2c5d9a7d8e887.ctex"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l4gik"]
+radius = 0.42400026
+height = 2.8480005
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_81r72"]
+radius = 0.35200024
+height = 2.144001
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_65mjg"]
+radius = 1.9599991
+height = 13.600002
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kmno1"]
+radius = 0.408
+height = 2.2560005
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y83dg"]
+radius = 50.799988
+height = 161.59999
+
+[node name="bulbminigame" type="Node2D" unique_id=1163509596]
+position = Vector2(493, 195)
+scale = Vector2(5, 5)
+script = ExtResource("1_t3lyd")
+
+[node name="Lever1" type="Area2D" parent="." unique_id=287329502]
+scale = Vector2(5, 5)
+priority = 1
+script = ExtResource("2_20xm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever1" unique_id=2114324468]
+position = Vector2(-12.159999, 22.399998)
+rotation = 0.0031986963
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_qt6kk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lever1" unique_id=640363805]
+position = Vector2(-12.24, 21.160002)
+scale = Vector2(0.08, 0.08)
+texture = SubResource("CompressedTexture2D_65mjg")
+hframes = 8
+vframes = 8
+frame = 8
+region_rect = Rect2(-0.7230072, 235, 244.723, 244.98096)
+
+[node name="Lever2" type="Area2D" parent="." unique_id=1421612503]
+scale = Vector2(5, 5)
+script = ExtResource("3_1rq7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever2" unique_id=1180193475]
+position = Vector2(3.1600003, 22.400002)
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_l4gik")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lever2" unique_id=617338231]
+position = Vector2(2.9599998, 21.160002)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_qt6kk")
+hframes = 8
+vframes = 8
+frame = 9
+
+[node name="Lever3" type="Area2D" parent="." unique_id=1724611962]
+scale = Vector2(5, 5)
+script = ExtResource("4_65mjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever3" unique_id=799037413]
+position = Vector2(18.64, 21.16)
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_81r72")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lever3" unique_id=1646871140]
+position = Vector2(18.64, 21.16)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_qt6kk")
+hframes = 8
+vframes = 8
+frame = 10
+
+[node name="Lever4" type="Area2D" parent="." unique_id=1715107551]
+scale = Vector2(5, 5)
+script = ExtResource("5_65mjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever4" unique_id=1307279294]
+position = Vector2(34.12, 22.4)
+shape = SubResource("CapsuleShape2D_65mjg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lever4" unique_id=2047854818]
+position = Vector2(34.399998, 21.16)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_qt6kk")
+hframes = 8
+vframes = 8
+frame = 11
+
+[node name="Lever5" type="Area2D" parent="." unique_id=1344428611]
+position = Vector2(5.9604645e-08, 0)
+scale = Vector2(5, 5)
+script = ExtResource("6_qt6kk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever5" unique_id=251679452]
+position = Vector2(49.440006, 21.16)
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_kmno1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lever5" unique_id=436833105]
+position = Vector2(49.559998, 21.16)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_qt6kk")
+hframes = 8
+vframes = 8
+frame = 12
+
+[node name="bulb" type="Sprite2D" parent="." unique_id=381408359]
+position = Vector2(93.200005, 15.399999)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_qt6kk")
+hframes = 8
+vframes = 8
+frame = 13
+script = ExtResource("8_qt6kk")
+
+[node name="Area2D" type="Area2D" parent="bulb" unique_id=1267509517]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bulb/Area2D" unique_id=1605525093]
+position = Vector2(0, 30.799997)
+shape = SubResource("CapsuleShape2D_y83dg")
