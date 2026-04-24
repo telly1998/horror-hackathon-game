@@ -33,10 +33,10 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://winscreen.tscn")
 		else:
 			get_tree().change_scene_to_file("res://lossscreen.tscn")
-			func _on_qte_success():
+func _on_qte_success():
 	Gamemanager.increment_qte_wins()
 	
-	if Gameanager.check_victory():
+	if Gamemanager.check_victory():
 		get_tree().change_scene_to_file("res://winscreen.tscn")
 	else:
 		get_tree().change_scene_to_file("res://maingame.tscn")

@@ -3,6 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://cb465yuoqdkp6" path="res://losscrop.tres" id="1_gcv54"]
 [ext_resource type="Script" uid="uid://vyamljep1guo" path="res://lossscreen.gd" id="1_r111s"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r111s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lg0i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpwkh"]
+
 [node name="lossscreen" type="Control" unique_id=389076297]
 layout_mode = 3
 anchors_preset = 15
@@ -23,7 +29,10 @@ stretch_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=1383791977]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r111s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8lg0i")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cpwkh")
 
 [connection signal="pressed" from="Button" to="." method="_on_return_button_pressed"]

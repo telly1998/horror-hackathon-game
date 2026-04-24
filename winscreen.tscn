@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://cdpnt73hra3c6" path="res://winscreen.gd" id="1_h3yos"]
 [ext_resource type="Texture2D" uid="uid://dpirnatodcsa1" path="res://winscreencrop.tres" id="1_y55kr"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehxyi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h3yos"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pd04t"]
+
 [node name="WinScreen" type="Control" unique_id=2141939941]
 layout_mode = 3
 anchors_preset = 15
@@ -27,7 +33,11 @@ stretch_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=1929494198]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_top = -230.0
+offset_right = 1920.0
+offset_bottom = 881.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ehxyi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h3yos")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pd04t")
 
 [connection signal="pressed" from="Button" to="." method="_on_return_button_pressed"]
